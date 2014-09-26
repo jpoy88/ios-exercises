@@ -25,6 +25,7 @@
     nameOnly = [nameOnly stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     
+    
     return nameOnly;
 }
 
