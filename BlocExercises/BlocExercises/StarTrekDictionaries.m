@@ -22,20 +22,22 @@
     
     //add Objects in Array --> [todoList addObject:@"Solve hunger"];
     
-    //for (NSInteger idx = 1; idx <= charactersArray.count; idx++){
-    //    NSMutableArray *result = [charactersArray addObject:charactersArray[@"favorite drink"]];
     
-    //return [charactersArray objectsAtIndexes:charactersArray.count];
-    /**
-    NSPredicate *myDrink = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'favorite drink'"];
+    //I am trying to access each arrayindex --> for loop
+    //Onced accessed, I will call the method to take it out --> mutableCharacter[0][@"favorite drink"]
     
-    if ([charactersArray filteredArrayUsingPredicate:myDrink]){
-        NSMutableArray *result = [StarTrekDictionaries@["favorite drink"]];
+    
+    NSMutableArray *mutableCharacters = [charactersArray mutableCopy];
+    NSValue *result;
+    
+    NSMutableArray *resultDrink = [[NSMutableArray alloc] init]; // <-- empty array so we can place the drinks in
+    
+    for (NSInteger idx = 0; idx <= (mutableCharacters.count - 1); idx++){
+         result = mutableCharacters[idx][@"favorite drink"]; // <-- tappingintothedictionary[index in array][dictionary key]
+        [resultDrink addObject:result]; // <-- adding the key to the empty array created earlier.
     }
     
-    return result;**/
-    
-    return nil;
+    return resultDrink;
     
     
 }
